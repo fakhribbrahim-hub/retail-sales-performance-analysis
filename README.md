@@ -93,6 +93,10 @@ The Power BI report includes four analytical sections:
 ### Return Analysis
 ![Return Analysis](images/returns_analysis.jpg)
 
+## Power BI File
+
+The Power BI (.pbix) file can be provided upon request.
+
 ## Exported Datasets
 
 - sales.csv
