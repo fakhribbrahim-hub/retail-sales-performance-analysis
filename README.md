@@ -79,6 +79,82 @@ The Power BI report includes four analytical sections:
 - High-sales products generate more returns in absolute terms, but return rates remain proportionally moderate.
 - Extreme return rates are mostly observed among low-to-medium sales products, suggesting potential product-level issues.
 
+## DAX Examples (Key Measures)
+
+Below are examples of key DAX measures used to build KPIs and customer intelligence indicators.
+
+### Net Revenue
+```DAX
+Net Revenue =
+SUM(sales[Revenue])
+```
+### Sales Revenue
+```DAX
+Sales Revenue = 
+CALCULATE(
+    SUM(sales[Revenue]),
+    sales[Revenue] > 0
+)
+```
+### Returned Revenue
+```DAX
+Returned Revenue =
+CALCULATE(
+    SUM(sales[Revenue]),
+    sales[TransactionType] = "Return"
+)
+```
+### Return Rate
+```DAX
+Return Rate = 
+DIVIDE(
+    [Returned Revenue],
+    [Sales Revenue]
+)
+```
+### Average Revenue per Customer
+```DAX
+Avg Revenue per Customer =
+DIVIDE(
+    [Net Revenue],
+    [Customers]
+)
+```
+### Average Orders per Product
+```DAX
+Avg Orders  (Products) = 
+AVERAGEX(
+    VALUES(sales[StockCode]),
+    [Orders]
+)
+```
+### Revenue Share - Top 5% Customers
+```DAX
+Revenue Share – Top 5% Customers = 
+VAR TopRevenue =
+    CALCULATE(
+        SUM(sales[Revenue]),
+        Customers[Value_segment] IN {"95–99%", "Top 1%"}
+    )
+VAR TotalRevenue =
+    SUM(sales[Revenue])
+RETURN
+DIVIDE(TopRevenue, TotalRevenue)
+```
+### Revenue Share - Top 20% Customers
+```DAX
+Revenue Share – Top 20% Customers = 
+VAR TopRevenue =
+    CALCULATE(
+        SUM(sales[Revenue]),
+        Customers[Value_segment] IN {"80–95%", "95–99%", "Top 1%"}
+    )
+VAR TotalRevenue =
+    SUM(sales[Revenue])
+RETURN
+DIVIDE(TopRevenue, TotalRevenue)
+```
+
 ## Dashboard Preview
 
 ### Sales Overview
