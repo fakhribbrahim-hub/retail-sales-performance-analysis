@@ -6,8 +6,6 @@ This project analyzes an e-commerce retail dataset to evaluate business performa
 
 The project combines Python for advanced data cleaning and preprocessing, and Power BI for interactive dashboard development and business insights visualization.
 
----
-
 ## Business Objectives
 
 - Analyze total revenue and sales trends
@@ -31,6 +29,14 @@ The project combines Python for advanced data cleaning and preprocessing, and Po
 - Matplotlib / Seaborn
 - Power BI
 - DAX (Data Analysis Expressions)
+
+## Dataset
+
+The original e-commerce retail dataset is publicly available.
+
+Due to file size limitations, a reduced sample version is included in this repository for demonstration purposes.
+
+The complete dataset can be provided upon request.
 
 ## Data Cleaning & Preparation (Python)
 
@@ -175,10 +181,15 @@ The Power BI (.pbix) file can be provided upon request.
 
 ## Exported Datasets
 
+After data cleaning and preprocessing in Python, structured datasets were exported for BI modeling:
+
 - sales.csv
 - customers.csv
 - products.csv
 - returns.csv
+
+Note: The `sales.csv` file included in this repository is a reduced sample due to file size limitations.  
+The complete version can be provided upon request.
 
 ## Skills Demonstrated
 
